@@ -74,6 +74,7 @@ namespace libChartDraw
                     {
                         second = "0" + Regex.Split(Line, @"\s{1,}")[6].Split('.')[0];
                     }
+
                     string dateString = year + month + day + hour + minute + second;
                     // MessageBox.Show(dateString);
                     DateTime dt = DateTime.ParseExact(dateString, "yyyyMMddHHmmss", System.Globalization.CultureInfo.CurrentCulture);
@@ -96,7 +97,14 @@ namespace libChartDraw
             }
             fs.Close();
             read.Close();
+            // textBox1.AppendText(String.Format(">>>绘制卫星数{0}\r\n",Path.GetFileNameWithoutExtension(filePath)));
+            DrawOne(rawSat, "卫星数");
+            // textbox.AppendText(String.Format("Finished At {0}\r\n", DateTime.Now.ToString()));
+            // MessageBox.Show(filePath +"\n"+ getAverage(rawSat));
             GC.Collect();
+            // GC.WaitForPendingFinalizers();
+            // dataGridView1.Rows.Add(dr);
+            // Form1.DrawOne(rawSat);
         }
         public void DrawRinexSat()
         {
@@ -113,7 +121,7 @@ namespace libChartDraw
             chart.ChartAreas[0].AxisX.Interval = 1;
             
             
- 
+
             chart.ChartAreas[0].AxisX.MajorGrid.Enabled = true;
             chart.ChartAreas[0].AxisY.MajorGrid.Enabled = true;
             chart.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = ChartDashStyle.Dash; //设置网格类型为虚线
