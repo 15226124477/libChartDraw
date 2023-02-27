@@ -98,7 +98,7 @@ namespace libChartDraw
             fs.Close();
             read.Close();
             // textBox1.AppendText(String.Format(">>>绘制卫星数{0}\r\n",Path.GetFileNameWithoutExtension(filePath)));
-            DrawOne(rawSat, "卫星数");
+            // DrawOne(rawSat, "卫星数");
             // textbox.AppendText(String.Format("Finished At {0}\r\n", DateTime.Now.ToString()));
             // MessageBox.Show(filePath +"\n"+ getAverage(rawSat));
             GC.Collect();
@@ -170,8 +170,6 @@ namespace libChartDraw
             // chart.ChartAreas[0].AxisX.Minimum = listX[0].ToOADate();
             // chart.ChartAreas[0].AxisX.Maximum = listX[rawTimeData.Count-1].AddSeconds(1).ToOADate();
             chart.ChartAreas[0].AxisY.ScaleView.Size = listY.Max() + listY.Min() + 1;
-
-
 
         }
     }
